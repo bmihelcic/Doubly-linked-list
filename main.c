@@ -6,21 +6,28 @@ int main() {
 
 	init(&listA);
 
-	for(int i=1;i<21;i++){
+	//upis brojeva od 1 do 10
+	for (int i = 1; i < 11; i++) {
 		add(&(listA->head), &(listA->tail), i);
 	}
 
-	printf("ListA: ");
+	//ispis liste
 	print_list(listA->head);
 
-	delete(&(listA->head),&(listA->tail),6);
-	printf("\nListA: ");
-	print_list(listA->head);
+	//brisanje n-tog elementa (6)
+	delete(&(listA->head), &(listA->tail), 2);
+	print_list(listA->head);	//ispis
 
-	add(&(listA->head), &(listA->tail), 125);
-	printf("\nListA: ");
+	//dodavanje broja 17
+	add(&(listA->head), &(listA->tail), 17);
+	print_list(listA->head);	//ispis
 
-	print_list(listA->head);
+	//brisanje svih
+	deleteAll(&(listA->head), &(listA->tail));
+	print_list(listA->head);	//ispis
+	print_mid(listA->head);
+
 
 	return 0;
 }
+

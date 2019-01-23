@@ -1,5 +1,5 @@
-#ifndef DVOSTRUKOPOVEZANA_H_
-#define DVOSTRUKOPOVEZANA_H_
+#ifndef DVOSTRUKA_H_
+#define DVOSTRUKA_H_
 
 struct list {
 	struct node* head;
@@ -14,11 +14,12 @@ struct node {
 
 
 void init(struct list**);
-void add(struct node**, struct node**, int);
-void print_list(struct node*);
-void delete(struct node**,struct node**, int);
-void deleteAll(struct node**,struct node**);
-void print_mid(struct node*);
+void add(struct list*, int);
+void print_list(struct list*);
+void delete(struct list*, int);
+void deleteAll(struct list*);
+void print_mid(struct list*);
 
 #endif
+
 

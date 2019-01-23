@@ -1,33 +1,33 @@
 #include <stdio.h>
-#include "dvostrukopovezana.h"
+#include "dvostruka.h"
 
 int main() {
-	struct list *listA = NULL;
+	struct list *listA=NULL;
 
 	init(&listA);
 
 	//upis brojeva od 1 do 10
-	for (int i = 1; i < 11; i++) {
-		add(&(listA->head), &(listA->tail), i);
+	for (int i = 1; i <= 10; i++) {
+		add(listA, i);
 	}
-
 	//ispis liste
-	print_list(listA->head);
+	print_list(listA);
 
-	//brisanje n-tog elementa (6)
-	delete(&(listA->head), &(listA->tail), 2);
-	print_list(listA->head);	//ispis
+	//brisanje n-tog elementa
+	delete(listA, 4);
+	delete(listA, 7);
+	print_list(listA);	//ispis
 
 	//dodavanje broja 17
-	add(&(listA->head), &(listA->tail), 17);
-	print_list(listA->head);	//ispis
+	add(listA, 17);
+	print_list(listA);	//ispis
 
 	//brisanje svih
-	deleteAll(&(listA->head), &(listA->tail));
-	print_list(listA->head);	//ispis
-	print_mid(listA->head);
+	deleteAll(listA);
+	print_list(listA);	//ispis
 
 
 	return 0;
 }
+
 
